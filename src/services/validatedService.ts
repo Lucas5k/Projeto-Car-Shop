@@ -15,6 +15,10 @@ class ValidatedService {
     if (doorsQty < 2) throw new Error(ErrorType.minDoorQuantityError);
     if (!doorsQty || !seatsQty) throw new Error(ErrorType.withoutCarProperties);
   };
+
+  public static validatedCarId = (_id: string) => {
+    if (_id.length < 24) throw new Error(ErrorType.idIsSmaller);
+  };
 }
 
 export default ValidatedService;

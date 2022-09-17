@@ -1,4 +1,5 @@
 import { isValidObjectId, Model } from 'mongoose';
+import { ErrorType } from '../errors/catalog';
 import { IModel } from '../interfaces/IModel';
 
 abstract class MongoModel<T> implements IModel<T> {
@@ -24,7 +25,8 @@ abstract class MongoModel<T> implements IModel<T> {
   }
 
   public async update(_id: string, obj: T): Promise<T | null> {
-    if (!isValidObjectId) throw new Error('id invalid');
+    if (!isValidObjectId) throw new Error(ErrorType.idIsInvalid);
+
     return this._model.findByIdAndUpdate(_id, { ...obj }, { new: true });
   }
 

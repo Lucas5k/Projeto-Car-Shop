@@ -5,7 +5,7 @@ import routeCar from './Routers/routerCar';
 
 const app = express();
 app.use(express.json());
-app.use('/cars', routeCar);
+app.use(routeCar);
 app.use(errorHandler);
 
 export default app;

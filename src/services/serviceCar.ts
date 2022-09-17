@@ -15,6 +15,16 @@ class Car implements IService<ICar> {
 
     return this._car.create(obj);
   }
+
+  public async read(): Promise<ICar[]> {
+    return this._car.read();
+  }
+
+  public async update(_id: string, obj: ICar): Promise<ICar | null> {
+    const idInvalid = await this._car.readOne(_id);
+    if (!idInvalid) throw new Error(ErrorType.idIsInvalid);
+    return this._car.update(_id, obj);
+  }
 }
 
 export default Car;

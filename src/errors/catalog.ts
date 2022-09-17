@@ -4,11 +4,14 @@ export enum ErrorType {
   minDoorQuantityError = 'minDoorQuantityError',
   withoutVehicleProperties = 'withoutVehicleProperties',
   withoutCarProperties = 'withoutCarProperties',
+  idIsSmaller = 'idIsSmaller',
+  idIsInvalid = 'idIsInvalid',
 }
 
 type ErrorResponseObject = {
-  message: string,
-  httpStatus: number
+  message?: string,
+  httpStatus: number,
+  error?: string
 };
 
 export type ErrorCatalog = {
@@ -35,6 +38,14 @@ const errorCatalog: ErrorCatalog = {
   withoutCarProperties: {
     message: 'you tried to create with some property missing',
     httpStatus: 400,
+  },
+  idIsSmaller: {
+    error: 'Id must have 24 hexadecimal characters',
+    httpStatus: 400,
+  },
+  idIsInvalid: {
+    error: 'Object not found',
+    httpStatus: 404,
   },
 };
 

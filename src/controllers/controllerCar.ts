@@ -16,6 +16,24 @@ class Car {
 
     res.status(201).json(result);
   }
+
+  public async read(_req: Request, res: Response<ICar>): Promise<void> {
+    const result = await this._Service.read();
+
+    res.status(200).json(result as unknown as ICar);
+  }
+
+  public async update(req: Request, res: Response<ICar>): Promise<void> {
+    const { id } = req.params;
+    const { doorsQty, seatsQty, model, year, color, status, buyValue } = req.body;
+    const CAR = { doorsQty, seatsQty, model, year, color, status, buyValue };
+
+    ValidatedService.validatedCarId(id);
+
+    const result = await this._Service.update(id, CAR);
+    
+    res.status(200).json(result as unknown as ICar);
+  }
 }
 
 export default Car;
