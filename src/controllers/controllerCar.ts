@@ -41,10 +41,19 @@ class Car {
     ValidatedService.validatedCarId(id);
 
     if (!Object.keys(req.body).length) return res.sendStatus(400);
-    await this._Service.update(id, CAR);
-    const result = await this._Service.readOne(id);
+    const result = await this._Service.update(id, CAR);
   
     return res.status(200).json(result as unknown as ICar);
+  }
+
+  public async delete(req: Request, res: Response<ICar>) {
+    const { id } = req.params;
+
+    ValidatedService.validatedCarId(id);
+
+    await this._Service.delete(id);
+
+    return res.sendStatus(204);
   }
 }
 

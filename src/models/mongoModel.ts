@@ -21,7 +21,12 @@ abstract class MongoModel<T> implements IModel<T> {
   public async readOne(_id: string): Promise<T | null> {
     if (!isValidObjectId) throw new Error('Error');
 
-    return this._model.findOne({ _id }).select({
+    return this._model.findOne({ _id });
+  }
+
+  public async update(_id: string, obj: T): Promise<T | null> {
+    await this._model.findByIdAndUpdate(_id, { ...obj }, { new: true });
+    const ts = await this._model.findOne({ _id }).select({
       _id: 1, 
       model: 1,
       year: 1,
@@ -29,20 +34,8 @@ abstract class MongoModel<T> implements IModel<T> {
       buyValue: 1,
       seatsQty: 1,
       doorsQty: 1,
-    }); 
-  }
-
-  public async update(_id: string, obj: T): Promise<T | null> {
-    return this._model.findByIdAndUpdate(_id, { ...obj }, { new: true })
-      .select({
-        _id: 1, 
-        model: 1,
-        year: 1,
-        color: 1,
-        buyValue: 1,
-        seatsQty: 1,
-        doorsQty: 1,
-      }); 
+    });
+    return ts;
   }
 
   public async delete(_id: string): Promise<T | null> {
