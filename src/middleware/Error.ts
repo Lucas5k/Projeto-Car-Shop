@@ -12,13 +12,11 @@ const errorHandler: ErrorRequestHandler = (err: Error | ZodError, _req, res, _ne
   const mappedError = errorCatalog[messageAsErrorType];
   if (mappedError) {
     const { httpStatus, message, error } = mappedError;
-    if (message) {
-      return res.status(httpStatus).json({ message });
-    } 
-    res.status(httpStatus).json({ error });
+    if (message) return res.status(httpStatus).json({ message });
+    return res.status(httpStatus).json({ error });
   }
 
-  return res.status(500).json({ message: 'internal error' });
+  return res.status(400).end;
 };
 
 export default errorHandler;

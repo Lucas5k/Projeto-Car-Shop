@@ -20,10 +20,17 @@ class Car implements IService<ICar> {
     return this._car.read();
   }
 
+  public async readOne(_id: string): Promise<ICar | null> {
+    const idInvalid = await this._car.readOne(_id);
+    if (!idInvalid) throw new Error(ErrorType.idIsInvalid);
+    return this._car.readOne(_id);
+  }
+
   public async update(_id: string, obj: ICar): Promise<ICar | null> {
     const idInvalid = await this._car.readOne(_id);
     if (!idInvalid) throw new Error(ErrorType.idIsInvalid);
-    return this._car.update(_id, obj);
+
+    return this._car.update(_id, { ...obj });
   }
 }
 

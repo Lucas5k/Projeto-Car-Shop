@@ -1,5 +1,7 @@
 import { ErrorType } from '../errors/catalog';
 import { ICar } from '../interfaces/ICar';
+// import ModelCar from '../models/modelCar';
+// import ServiceCar from './serviceCar';
 
 class ValidatedService {
   public static validatedVehicle = (obj: ICar) => {

@@ -11,7 +11,8 @@ export enum ErrorType {
 type ErrorResponseObject = {
   message?: string,
   httpStatus: number,
-  error?: string
+  error?: string,
+  emptyB?: string,
 };
 
 export type ErrorCatalog = {

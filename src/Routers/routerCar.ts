@@ -11,6 +11,7 @@ const route = Router();
 
 route.post('/cars', (req, res) => controller.create(req, res));
 route.get('/cars', (req, res) => controller.read(req, res));
-route.get('/cars/:id', (req, res) => controller.update(req, res));
+route.get('/cars/:id', (req, res) => controller.readOne(req, res));
+route.put('/cars/:id', (req, res) => controller.update(req, res));
 
 export default route;
