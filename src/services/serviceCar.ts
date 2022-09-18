@@ -11,7 +11,7 @@ class Car implements IService<ICar> {
   }
 
   public async create(obj: ICar): Promise<ICar> {
-    if (!obj) throw new Error(ErrorType.emptyObject);
+    if (!obj) throw new Error('the object must not be empty');
 
     return this._car.create(obj);
   }
