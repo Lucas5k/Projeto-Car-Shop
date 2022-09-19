@@ -108,5 +108,15 @@ describe('#CarService', () => {
       
       expect(result).to.be.true;
     });
+
+    it('Car delete failed', async () => {
+      sinon.restore();
+      sinon.stub(modelCar, 'readOne').rejects({ message: ErrorType.idIsInvalid });
+      try {
+        await serviceCar.readOne('12345Errado');
+      } catch (error: any) {
+        expect(error.message).to.be.eq(ErrorType.idIsInvalid);
+      }
+    });
   });
 });
