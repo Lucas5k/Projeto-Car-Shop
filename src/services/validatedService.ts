@@ -1,7 +1,6 @@
 import { ErrorType } from '../errors/catalog';
 import { ICar } from '../interfaces/ICar';
-// import ModelCar from '../models/modelCar';
-// import ServiceCar from './serviceCar';
+import { IMotorcycle } from '../interfaces/IMotorcycle';
 
 class ValidatedService {
   public static validatedVehicle = (obj: ICar) => {
@@ -20,6 +19,23 @@ class ValidatedService {
 
   public static validatedCarId = (_id: string) => {
     if (_id.length < 24) throw new Error(ErrorType.idIsSmaller);
+  };
+
+  public static validatedMotorcycle = (obj: IMotorcycle) => {
+    const { category, engineCapacity } = obj;
+
+    if (!category || !engineCapacity) {
+      throw new Error(ErrorType.withoutCarProperties);
+    }
+  
+    if (typeof category !== 'string') throw new Error(ErrorType.emptyObject);
+    if (engineCapacity > 2500) throw new Error(ErrorType.emptyObject);
+  };
+
+  public static validatedStreet = (obj: IMotorcycle) => {
+    const { category } = obj;
+    
+    if (category !== 'Street') throw new Error(ErrorType.emptyObject);
   };
 }
 
