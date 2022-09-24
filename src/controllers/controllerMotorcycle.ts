@@ -21,6 +21,15 @@ class Motorcycle {
 
     res.status(200).json(result as unknown as IMotorcycle);
   }
+
+  public async readOne(req: Request, res: Response<IMotorcycle>): Promise<void> {
+    const { id } = req.params;
+    ValidatedService.validatedCarId(id);
+
+    const result = await this._Service.readOne(id);
+
+    res.status(200).json(result as unknown as IMotorcycle);
+  }
 }
 
 export default Motorcycle;
