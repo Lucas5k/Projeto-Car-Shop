@@ -15,6 +15,12 @@ class Motorcycle {
 
     res.status(201).json(result);
   }
+
+  public async read(_req: Request, res: Response<IMotorcycle>): Promise<void> {
+    const result = await this._Service.read();
+
+    res.status(200).json(result as unknown as IMotorcycle);
+  }
 }
 
 export default Motorcycle;
