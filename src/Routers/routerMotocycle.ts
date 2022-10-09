@@ -12,5 +12,6 @@ const route = Router();
 route.post('/motorcycles', (req, res) => controller.create(req, res));
 route.get('/motorcycles', (req, res) => controller.read(req, res));
 route.get('/motorcycles/:id', (req, res) => controller.readOne(req, res));
+route.delete('/motorcycles/:id', (req, res) => controller.delete(req, res));
 
 export default route;

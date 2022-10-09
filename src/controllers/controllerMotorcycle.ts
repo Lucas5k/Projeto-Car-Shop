@@ -30,6 +30,16 @@ class Motorcycle {
 
     res.status(200).json(result as unknown as IMotorcycle);
   }
+
+  public async delete(req: Request, res: Response<IMotorcycle>): Promise<void> {
+    const { id } = req.params;
+
+    ValidatedService.validatedCarId(id);
+
+    await this._Service.delete(id);
+
+    res.sendStatus(204);
+  }
 }
 
 export default Motorcycle;
