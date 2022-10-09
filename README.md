@@ -23,20 +23,22 @@ para salvar os dados no banco;
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
 ```
 - Clone o repositório
-git clone git@github.com:Lucas5k/Projeto-Trybesmith.git
+git clone git@github.com:Lucas5k/Projeto-Car-Shop.git
 
 - Entre no arquivo do projeto
-cd Projeto-Trybesmith
+cd Projeto-Car-Shop
 
 - Instale as dependências
 npm install
 
 - Inicialize o projeto
-docker-compose up -d
+npm run dev
+
+- Inicialize os testes
+npm run test:dev
 
 ```
 ## :soon: Implementação futura
-* Refatorar o código, e aplicar meus conhecimentos em SOLID e aplicar no mesmo, pois nesse momento do curso ainda não tinha aprendido sobre principios SOLID.
-* Corrigir alguns Bugs na aplicação.
+* Refatorar o código, e aplicar meus conhecimentos em SOLID.
 
 ## :handshake: Projeto feito individualmente!
