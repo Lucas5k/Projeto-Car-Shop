@@ -9,7 +9,7 @@ para salvar os dados no banco;
 
 ## :books: Funcionalidades
 * <b>Funcionalidade 1</b>: Desenvolver a API Pesquisar, Cadastrar, Editar e Remover;
-* <b>Funcionalidade 2</b>: Teste de unitários, testando cada Camada da aplicação;
+* <b>Funcionalidade 2</b>: Teste de unidade, testando cada Camada da aplicação;
 
 ## :wrench: Tecnologias utilizadas
 - Typescript
