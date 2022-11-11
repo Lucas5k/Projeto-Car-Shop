@@ -4,7 +4,7 @@
 Décimo segundo projeto no módulo de back-end, Nesse projeto desenvolvi uma APi de uma locadora de carros.
 Reforeci meus conhecimentos aprendidos sobre camadas de serviço MSC (Model, Service e Controller) e arquitetura RestAPI.
 Utilizei Typescript e alguns dos Principios SOLID para o desenvolvimento, e utilizei o MongoDB juntamente com o Mongoose
-para salvar os dados no banco;
+para salvar e manipular os dados no banco;
 
 
 ## :books: Funcionalidades
