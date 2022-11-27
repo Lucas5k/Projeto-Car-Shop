@@ -11,7 +11,7 @@ para salvar e manipular os dados no banco;
 * <b>Funcionalidade 1</b>: Desenvolver a API Pesquisar, Cadastrar, Editar e Remover;
 * <b>Funcionalidade 2</b>: Teste de unidade, testando cada Camada da aplicação;
 
-## :wrench: Tecnologias utilizadas
+## :wrench: <h3>Tecnologias utilizadas</h3>
 - Typescript
 - Mocha, Chai e Sinon
 - Camadas MSC
