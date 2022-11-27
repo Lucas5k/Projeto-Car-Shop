@@ -12,7 +12,7 @@ para salvar e manipular os dados no banco;
 <b>Funcionalidade 2</b>: Teste de unidade, testando cada Camada da aplicação;
 
 
-<h3>:wrench: Tecnologias utilizadas</h3>
+## <h3>:wrench: Tecnologias utilizadas</h3>
 - Typescript
 - Mocha, Chai e Sinon
 - Camadas MSC
