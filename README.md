@@ -40,6 +40,6 @@ npm run test:dev
 
 ```
 ## :soon: Implementação futura
-* Refatorar o código, e aplicar meus conhecimentos em SOLID.
+Refatorar o código, e aplicar meus conhecimentos em SOLID.
 
 ## :handshake: Projeto feito individualmente!
