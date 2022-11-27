@@ -8,8 +8,8 @@ para salvar e manipular os dados no banco;
 
 
 ## :books: Funcionalidades
-<b>Funcionalidade 1</b>: Desenvolver a API Pesquisar, Cadastrar, Editar e Remover;
-<b>Funcionalidade 2</b>: Teste de unidade, testando cada Camada da aplicação;
+<ol><b>Funcionalidade 1</b>: Desenvolver a API Pesquisar, Cadastrar, Editar e Remover;</ol>
+<ol><b>Funcionalidade 2</b>: Teste de unidade, testando cada Camada da aplicação;</ol>
 
 
 ## <h3>:wrench: Tecnologias utilizadas</h3>
